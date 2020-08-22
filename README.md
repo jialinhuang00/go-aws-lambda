@@ -37,7 +37,10 @@ Output:
     "body": "{\"message\":\"Go Serverless works\"}"
 }
 ```
-
+Using curl
+```bash
+curl https://lwih1pc1ac.execute-api.us-east-1.amazonaws.com/dev/hello
+```
 
 # BUILD CASES
 #### WORKS

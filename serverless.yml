@@ -1,4 +1,4 @@
-service: go-aws-lambda
+service: go-aws-lambda-hello
 
 frameworkVersion: ">=1.28.0 <2.0.0"
 
