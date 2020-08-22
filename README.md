@@ -21,7 +21,7 @@ $ serverless config credentials
 ```
 
 
-#### Build & Deploy
+# Build & Deploy
 ```bash
 GOOS=linux go build -o bin/hello main.go
 sls deploy -v
