@@ -13,6 +13,7 @@ go get github.com/aws/aws-lambda-go/events
 go get github.com/aws/aws-lambda-go/lambda
 ```
 #### Authentication
+[:key:Get Access Key](https://console.aws.amazon.com/iam/home#/security_credentials)
 ```bash
 $ serverless config credentials 
   --provider aws 
