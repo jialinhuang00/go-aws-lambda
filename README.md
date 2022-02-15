@@ -26,13 +26,21 @@ $ serverless config credentials
 > Before you try to deploy, make some change, or sls will skip if no any updates.
 ```bash
 GOOS=linux go build -o bin/hello main.go
-sls deploy
+
 # if get Resource handler returned message: "Lambda function xxxx could not be found"
 # do `sls remove` first
+sls deploy
+
+# Deploying go-aws-lambda-hello to stage dev (us-east-1)
+
+# ✔ Service deployed to stack go-aws-lambda-hello-dev (84s)
+
+# endpoint: GET - https://xxx.execute-api.us-east-1.amazonaws.com/dev/hello
+# functions:
+#   hello: go-aws-lambda-hello-dev-hello (5.1 MB)
 
 sls invoke -f hello
 ```
-
 Output:
 ```
 {
@@ -44,7 +52,7 @@ Output:
 ```
 Using curl
 ```bash
-curl https://lwih1pc1ac.execute-api.us-east-1.amazonaws.com/dev/hello
+curl https://xxx.execute-api.us-east-1.amazonaws.com/dev/hello
 ```
 
 # BUILD CASES
