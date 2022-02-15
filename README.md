@@ -1,17 +1,18 @@
 
 
 # Environment
-#### PC
+#### Pc package installation
 ```bash
 brew install go
 brew install serverless
 ```
 
-#### Project
+#### Go Package installation
 ```bash
 go get github.com/aws/aws-lambda-go/events
 go get github.com/aws/aws-lambda-go/lambda
 ```
+
 #### Authentication
 [:key: Get Access Key](https://console.aws.amazon.com/iam/home#/security_credentials)
 ```bash
@@ -22,9 +23,13 @@ $ serverless config credentials
 
 
 # Build & Deploy
+> Before you try to deploy, make some change, or sls will skip if no any updates.
 ```bash
 GOOS=linux go build -o bin/hello main.go
-sls deploy -v
+sls deploy
+# if get Resource handler returned message: "Lambda function xxxx could not be found"
+# do `sls remove` first
+
 sls invoke -f hello
 ```
 
@@ -72,7 +77,3 @@ with `handler: bin/hello.exe`
 ```
 $ GOOS=darwin GOARCH=amd64 go build -o bin/hello.exe main.go
 ```
-
-
-
-
