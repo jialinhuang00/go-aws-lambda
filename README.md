@@ -87,3 +87,9 @@ with `handler: bin/hello.exe`
 ```
 $ GOOS=darwin GOARCH=amd64 go build -o bin/hello.exe main.go
 ```
+
+# Misc
+## How to get your function resource
+- Go API Gateway
+- API
+- Stages
