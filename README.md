@@ -45,9 +45,11 @@ Output:
 ```
 {
     "statusCode": 200,
-    "headers": null,
+    "headers": {
+        "Content-Type": "text/html"
+    },
     "multiValueHeaders": null,
-    "body": "{\"message\":\"Go Serverless works\"}"
+    "body": "<h1>Go Serverless works, here is html format</h1>"
 }
 ```
 Using curl
