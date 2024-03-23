@@ -4,18 +4,21 @@ frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: go1.x
+  runtime: provided.al2
+  architecture: arm64
+  httpApi:
+    cors: true
 
 functions:
-  hello:
-    handler: bin/hello
+  hello: # sls invoke -f [function name]
+    handler: bootstrap
+    package:
+      artifact: build/lambda/hello.zip
     events:
-      - http:
-          path: hello
+      - httpApi:
+          path: /arm64/hello
           method: get
-
-package:
- exclude:
-   - ./**
- include:
-   - ./bin/**
+# https://stackoverflow.com/questions/66001173/serverless-error-no-file-matches-include-exclude-patterns
+# package:
+#   patterns:
+#     - "./bin/**" # 包括 bin 目錄下的所有文件
