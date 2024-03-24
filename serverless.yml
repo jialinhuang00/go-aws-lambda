@@ -1,6 +1,8 @@
 service: go-aws-lambda-hello
 
 frameworkVersion: "3"
+package:
+  individually: true
 
 provider:
   name: aws
