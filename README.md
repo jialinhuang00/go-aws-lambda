@@ -33,8 +33,8 @@ make build
 make zip
 make deploy
 
-# if anythign wrong happened.
-make restract
+# if anything wrong happened.
+make retract
 
 
 # try try
