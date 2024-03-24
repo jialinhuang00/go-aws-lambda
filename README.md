@@ -1,3 +1,12 @@
+# Why
+
+the Serverless Framework is specifically aimed at integrating cloud resources. It abstracts and automates the configuration and deployment of cloud resources, making it easier for developers to build and manage serverless applications
+
+## Use Cases
+
+- lower traffic APIs but requiring scalability.
+- Background jobs like image processing, sending emails or data cleanup.
+
 ## Build Prepare
 
 #### CLI install
