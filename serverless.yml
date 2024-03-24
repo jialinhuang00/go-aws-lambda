@@ -18,7 +18,7 @@ functions:
       artifact: build/lambda/hello.zip
     events:
       - httpApi:
-          path: /arm64/hello
+          path: /sls-gateway-lambda-hello
           method: get
 # https://stackoverflow.com/questions/66001173/serverless-error-no-file-matches-include-exclude-patterns
 # package:
