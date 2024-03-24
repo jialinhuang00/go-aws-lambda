@@ -14,7 +14,7 @@ func Handler(ctx context.Context) (Response, error) {
 	resp := Response{
 		StatusCode: 200,
 		Headers:    map[string]string{"Content-Type": "text/html"},
-		Body:       "<h1>Go Serverless works, here is html format</h1>",
+		Body:       "<h1>Go Serverless works, here is html format. I'm lambda</h1>",
 	}
 
 	return resp, nil

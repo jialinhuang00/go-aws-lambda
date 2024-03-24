@@ -11,5 +11,5 @@ retract:
 	sls remove
 
 clean:
-	rm -rf ./bin
+	rm -rf ./build
 
