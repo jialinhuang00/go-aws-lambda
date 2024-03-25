@@ -71,17 +71,31 @@ curl https://xxx.execute-api.us-east-1.amazonaws.com/dev/hello
 
 # Misc
 
-### serverless.yml Runtime updated
+1. serverless.yml Runtime updated.
+   No longer support go1.x
+   [here](https://aws.amazon.com/blogs/compute/migrating-aws-lambda-functions-from-the-go1-x-runtime-to-the-custom-runtime-on-amazon-linux-2/)
 
-No longer support go1.x
-[here](https://aws.amazon.com/blogs/compute/migrating-aws-lambda-functions-from-the-go1-x-runtime-to-the-custom-runtime-on-amazon-linux-2/)
+   ```
+   Lambda is deprecating the go1.x runtime in line with Amazon Linux 1 end-of-life, scheduled for December 31, 2023. Customers using Go with Lambda should migrate their functions to the provided.al2 runtime. Benefits include support for AWS Graviton2 processors with better price-performance, and a streamlined invoke path with faster performance.
+   ```
 
-```
-Lambda is deprecating the go1.x runtime in line with Amazon Linux 1 end-of-life, scheduled for December 31, 2023. Customers using Go with Lambda should migrate their functions to the provided.al2 runtime. Benefits include support for AWS Graviton2 processors with better price-performance, and a streamlined invoke path with faster performance.
-```
+2. go get is deprecated
 
-### go get is deprecated
+   ```
+   Starting from Go version 1.16, go get is no longer the recommended way to manage dependencies. Instead, it is recommended to use Go modules. Using Go modules allows for better management of project dependencies.
+   ```
 
-```
-Starting from Go version 1.16, go get is no longer the recommended way to manage dependencies. Instead, it is recommended to use Go modules. Using Go modules allows for better management of project dependencies.
-```
+3. Why build as linux with arm64
+
+   The Lambda runtime environment is built on the Amazon Linux platform but differs from the traditional Amazon Linux distribution and may undergo updates and improvements over time.
+
+4. Build Cases
+
+- [❌] go build -o build/lambda/hello/bootstrap main.go
+
+- [✅] `GOOS=linux GOARCH=arm64` go build -o build/lambda/hello/bootstrap main.go
+- [❌] `GOOS=linux GOARCH=amd64` go build -o build/lambda/hello/bootstrap main.go
+- [✅] `GOOS=linux` go build -o build/lambda/hello/bootstrap main.go
+
+- [❌] GOOS=darwin GOARCH=amd64 go build -o build/lambda/hello/bootstrap main.go
+- [❌] GOOS=windows GOARCH=amd64 go build -o build/lambda/hello/bootstrap main.go

@@ -5,7 +5,7 @@ zip:
 	zip -j build/lambda/hello.zip build/lambda/hello/bootstrap
 
 deploy:
-	sls deploy -v
+	sls deploy --verbose
 
 retract:
 	sls remove

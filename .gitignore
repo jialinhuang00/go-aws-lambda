@@ -1,5 +1,7 @@
 # Binaries for programs and plugins
-bin
+bin/
+build/
+
 .serverless
 *.exe
 *.exe~

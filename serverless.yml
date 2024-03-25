@@ -20,7 +20,3 @@ functions:
       - httpApi:
           path: /sls-gateway-lambda-hello
           method: get
-# https://stackoverflow.com/questions/66001173/serverless-error-no-file-matches-include-exclude-patterns
-# package:
-#   patterns:
-#     - "./bin/**" # 包括 bin 目錄下的所有文件
